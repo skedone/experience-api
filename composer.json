@@ -1,0 +1,30 @@
+{
+    "name": "skedone/experience-api",
+    "description": "Experience API (knows as xApi)",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Edoardo Biraghi",
+            "email": "edoardo.biraghi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.3.0",
+        "jms/serializer": "~0.11",
+        "symfony/config": "2.*",
+        "symfony/validator": "2.*",
+        "rhumsaa/uuid": "2.7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "XApi\\Model\\": "src/Model",
+            "XApi\\Tests\\": "src/Tests",
+            "XApi\\Provider\\": "src/Provider",
+            "XApi\\LRS\\": "src/LRS",
+            "XApi\\Serializer\\": "src/Serializer",
+            "XApi\\Validator\\": "src/Validator"
+        }
+    }
+}

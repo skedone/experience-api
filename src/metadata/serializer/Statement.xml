@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="XApi\Model\Statement" exclusion-policy="ALL">
+        <property name="id" type="string" expose="true"/>
+        <property name="verb" type="XApi\Model\Verb" expose="true"/>
+        <property name="actor" type="XApi\Model\Actor" expose="true"/>
+        <property name="object" type="XApi\Model\Object" expose="true"/>
+        <property name="result" type="XApi\Model\Result" expose="true"/>
+    </class>
+</serializer>

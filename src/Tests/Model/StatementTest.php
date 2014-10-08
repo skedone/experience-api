@@ -14,6 +14,7 @@ namespace XApi\Tests\Model;
 use XApi\Model\Agent;
 use XApi\Model\Statement;
 use XApi\Model\Verb;
+use XApi\Model\Context;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -26,6 +27,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase
         $statement->setId('e05aa883-acaf-40ad-bf54-02c8ce485fb0');
         $statement->setActor(new Agent());
         $statement->setVerb(new Verb());
+        $statement->setContext(new Context());
         $statementReference = $statement->getStatementReference();
 
         $this->assertInstanceOf(

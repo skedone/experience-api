@@ -6,5 +6,6 @@
         <property name="actor" type="XApi\Model\Actor" expose="true"/>
         <property name="object" type="XApi\Model\Object" expose="true"/>
         <property name="result" type="XApi\Model\Result" expose="true"/>
+        <property name="context" type="XApi\Model\Context" expose="true" />
     </class>
 </serializer>

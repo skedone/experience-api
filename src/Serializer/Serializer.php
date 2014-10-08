@@ -28,6 +28,11 @@ use XApi\Serializer\Handler\DocumentDataUnwrapper;
  */
 class Serializer
 {
+    public function __construct()
+    {
+        return static::createSerializerBuilder()->build();
+    }
+
     /**
      * Returns the directory containing the Serializer metadata.
      *

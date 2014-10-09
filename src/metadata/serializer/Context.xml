@@ -2,5 +2,6 @@
 <serializer>
     <class name="XApi\Model\Context" exclusion-policy="ALL">
 		<property name="instructor" type="XApi\Model\Actor" expose="true" />
+		<property name="contextActivities" type="XApi\Model\ContextActivities" expose="true" />
     </class>
 </serializer>

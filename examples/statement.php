@@ -12,6 +12,7 @@ use XApi\Model\Verb;
 use XApi\Model\Activity;
 use XApi\Model\Definition;
 use XApi\Model\Context;
+use XApi\Model\ContextActivities;
 
 use XApi\Serializer\StatementSerializer;
 
@@ -100,9 +101,15 @@ $verb->setDisplay($data['verb']['display']);
 $object = new Activity();
 $object->setId($data['object']['id']);
 
+$on = new Activity();
+$on->setId($data['object']['id']);
+
 $context = new Context();
 $context->setInstructor($actor);
-$context->setContextActivities();
+
+$ca = new ContextActivities();
+$ca->setParent($on);
+$context->setContextActivities($ca);
 
 
 $statement->setId(Uuid::uuid4());

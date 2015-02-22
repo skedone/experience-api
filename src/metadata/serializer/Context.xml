@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="XApi\Model\Context" exclusion-policy="ALL">
+		<property name="instructor" type="XApi\Model\Actor" expose="true" />
+		<property name="contextActivities" type="XApi\Model\ContextActivities" expose="true" />
+        <property name="extensions" type="array" expose="true" />
+    </class>
+</serializer>

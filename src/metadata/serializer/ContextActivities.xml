@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="XApi\Model\ContextActivities" exclusion-policy="ALL">
+        <property name="parent" type="XApi\Model\Activity" expose="true" />
+    </class>
+</serializer>

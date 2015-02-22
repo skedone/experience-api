@@ -49,6 +49,12 @@ class Statement implements StatementInterface
     protected $result;
 
     /**
+     * The {@link Object}
+     * @var \XApi\Model\ContextInterface
+     */
+    protected $context;
+
+    /**
      * {@inheritDoc}
      */
     public function setId($id)
@@ -118,6 +124,23 @@ class Statement implements StatementInterface
     public function setResult(ResultInterface $result)
     {
         $this->result = $result;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setContext(ContextInterface $context)
+    {
+        $this->context = $context;
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getContext()
+    {
+        return $this->context;
     }
 
     /**

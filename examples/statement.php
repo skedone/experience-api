@@ -11,6 +11,8 @@ use XApi\Model\Agent;
 use XApi\Model\Verb;
 use XApi\Model\Activity;
 use XApi\Model\Definition;
+use XApi\Model\Context;
+use XApi\Model\ContextActivities;
 
 use XApi\Serializer\StatementSerializer;
 
@@ -99,19 +101,26 @@ $verb->setDisplay($data['verb']['display']);
 $object = new Activity();
 $object->setId($data['object']['id']);
 
+$on = new Activity();
+$on->setId($data['object']['id']);
+
+$context = new Context();
+$context->setInstructor($actor);
+
+$ca = new ContextActivities();
+$ca->setParent($on);
+$context->setContextActivities($ca);
+
+
 $statement->setId(Uuid::uuid4());
 $statement->setActor($actor);
 $statement->setVerb($verb);
 $statement->setObject($object);
-
-$validator = Validator::createValidator();
-$test = $validator->validate($statement);
-print $test;
+$statement->setContext($context);
 
 $serializedStatements = $statementSerializer->serializeStatement($statement);
+print_r($statement);
+print "\n--- # ------------------------------------ \n";
+print_r($statementSerializer->deserializeStatement($serializedStatements));
+print "\n--- # ------------------------------------ \n";
 print $serializedStatements;
-// print_r($statementSerializer->deserializeStatement($serializedStatements));
-/*
-$lsr = new LearningRecordStore();
-$lsr->storeStatement($serializedStatement);
-*/
